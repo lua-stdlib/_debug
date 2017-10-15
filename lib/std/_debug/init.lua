@@ -3,24 +3,26 @@
  Copyright (C) 2011-2017 Gary V. Vaughan
  Copyright (C) 2002-2014 Reuben Thomas <rrt@sc3d.org>
 ]]
---[[
- Manage an overall debug state, and associated substates.
+--[[--
+ Manage debug state, and associated substate hints.
 
- Set or change the deug state by calling the returned functor with
- no argument to reset to defaults, `true` to enable all substates,
- or `false` to disable all debugging:
+ Set or change all the debug substate hints by calling the returned
+ module functable with no argument to reset to defaults; with `true`
+ to set all substate hints into development mode, or `false` for
+ production mode.
 
-    local _debug = require 'std._debug' (false)
+    local _debug = require 'std._debug'(false)
 
- Query substates by indexing the returned table:
+ Query substate hints by indexing the returned module functable keys:
 
     local isstrict = _debug.strict
 
  Beware that even though you can change std._debug state at any time,
- stdlib libraries are configured at load time according to the state
- at the time they are loaded - e.g. changing _debug.strict after
- require 'std' does not affect the strict environment created for the
- 'std' module when it was loaded.
+ stdlib libraries in particular (but probably other clients too) are
+ configured at load time according to the state at the time they are
+ required - e.g. changing _debug.strict after require 'std' does not
+ affect the strict environment already created for the 'std' module
+ when it was previously loaded.
 
  @module std._debug
 ]]
@@ -30,22 +32,7 @@
 local _DEBUG = 'default'
 
 
--- Request specific debug substates.
---
--- Use `__call` metamethod to request all substates on or off at once.
--- Note that none of the features described here are implemented, this is
--- merely a central location to record requests; other modules you load
--- subsequently may or may not choose to comply.
--- @table _debug
--- @bool[opt=true] argcheck `true` if runtime argument checking is desired
--- @bool[opt] deprecate `nil` if deprecated api warnings are desired;
---   `false` if deprecated apis without warnings are desired; `true` if
---   removal of deprecated apis is preferred
--- @int[opt=1] level debugging level
--- @bool[opt=true] strict `true` if strict enforcement of variable declaration
---   before use is desired
--- @usage
---    require 'std._debug'.argcheck = false
+--- Nothing!
 local spec = {
    argcheck  = { default=true,  safe=true,    fast=false},
    deprecate = { default=nil,   safe=true,    fast=false},
@@ -56,12 +43,12 @@ local spec = {
 
 local metatable = {
    --- Metamethods
-   -- %section metamethods
+   -- @section metamethods
 
-   --- Set the overall debug state.
+   --- Change the overall debug state.
    -- @function __call
    -- @bool[opt] enable or disable all debugging substates
-   -- @treturn table states
+   -- @treturn Substates substates
    -- @usage
    --   -- Enable all debugging substates
    --   local _debug = require 'std._debug'(true)
@@ -104,3 +91,26 @@ local metatable = {
 
 
 return setmetatable({}, metatable)
+
+
+--- Types
+-- @section types
+
+--- Builtin debug substate hints.
+--
+-- Use `__call` metamethod to set all substate hints at once.
+-- Note that none of the debugging features required to implement these
+-- hints are encoded here, this module is merely a central location to
+-- record systemwide hint; other modules you load subsequently may or may
+-- not choose to behave according to their content.
+-- @table Substates
+-- @bool[opt=true] argcheck `true` if runtime argument checking is desired
+-- @bool[opt] deprecate `nil` if deprecated api warnings are desired;
+--   `false` if deprecated apis without warnings are desired; `true` if
+--   removal of deprecated apis is preferred
+-- @int[opt=1] level debugging level
+-- @bool[opt=true] strict `true` if strict enforcement of variable declaration
+--   before use is desired
+-- @usage
+--    require 'std._debug'.argcheck = false
+
