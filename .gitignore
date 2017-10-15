@@ -1,0 +1,8 @@
+*~
+.DS_Store
+/*.src.rock
+/build-aux/config.ld
+/doc
+/lib/std/version.lua
+/luacov.*.out
+/stdlib-*.tar.gz
