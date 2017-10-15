@@ -3,6 +3,6 @@
 /*.src.rock
 /build-aux/config.ld
 /doc
-/lib/std/version.lua
+/lib/std/_debug/version.lua
 /luacov.*.out
 /stdlib-*.tar.gz
