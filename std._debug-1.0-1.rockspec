@@ -1,4 +1,4 @@
-local _MODREV, _SPECREV = 'git', '-1'
+local _MODREV, _SPECREV = '1.0', '-1'
 
 package = 'std._debug'
 version = _MODREV .. _SPECREV
@@ -13,14 +13,12 @@ description = {
 }
 
 source = {
-   url = 'git://github.com/lua-stdlib/_debug.git',
-   --url = 'http://github.com/lua-stdlib/_debug/archive/v' .. _MODREV .. '.zip',
-   --dir = '_debug-' .. _MODREV,
+   url = 'http://github.com/lua-stdlib/_debug/archive/v' .. _MODREV .. '.zip',
+   dir = '_debug-' .. _MODREV,
 }
 
 dependencies = {
    'lua >= 5.1, < 5.4',
-   'ldoc',
 }
 
 build = {

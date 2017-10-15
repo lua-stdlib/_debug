@@ -4,7 +4,7 @@ Debug Hints Library
 Copyright (C) 2002-2017 [std._debug authors][authors]
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://mit-license.org)
-[![travis-ci status](https://secure.travis-ci.org/lua-stdlib/_debug.png?branch=master)](http://travis-ci.org/lua-stdlib/_debug/builds)
+[![travis-ci status](https://secure.travis-ci.org/lua-stdlib/_debug.png?branch=release-v1.0)](http://travis-ci.org/lua-stdlib/_debug/builds)
 [![codecov.io](https://codecov.io/gh/lua-stdlib/_debug/branch/master/graph/badge.svg)](https://codecov.io/gh/lua-stdlib/_debug)
 [![Stories in Ready](https://badge.waffle.io/lua-stdlib/_debug.png?label=ready&title=Ready)](https://waffle.io/lua-stdlib/_debug)
 
