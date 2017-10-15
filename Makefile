@@ -17,11 +17,10 @@ all: doc $(luadir)/version.lua
 
 
 $(luadir)/version.lua: .FORCE
-	@echo 'return "Normalized Lua Functions / $(VERSION)"' > '$@T';		\
+	@echo 'return "Debug hints library / $(VERSION)"' > '$@T';		\
 	if cmp -s '$@' '$@T'; then						\
 	    rm -f '$@T';							\
 	else									\
-	    echo 'echo "Normalized Lua Functions / $(VERSION)" > $@';		\
 	    mv '$@T' '$@';							\
 	fi
 

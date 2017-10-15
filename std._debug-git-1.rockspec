@@ -4,9 +4,9 @@ package = 'std._debug'
 version = _MODREV .. _SPECREV
 
 description = {
-   summary = 'Debug Settings Library',
+   summary = 'Debug Hints Library',
    detailed = [[
-      Manage an overall debug state, and associated substates.
+      Manage an overall debug state, and associated hint substates.
    ]],
    homepage = 'http://lua-stdlib.github.io/_debug',
    license = 'MIT/X11',

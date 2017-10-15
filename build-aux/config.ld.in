@@ -1,5 +1,5 @@
 --[[
- Debug Settings Library for Lua 5.1, 5.2 & 5.3
+ Debug Hints Library for Lua 5.1, 5.2 & 5.3
  Copyright (C) 2011-2017 Gary V. Vaughan
  Copyright (C) 2002-2014 Reuben Thomas <rrt@sc3d.org>
 ]]
@@ -9,7 +9,7 @@ project = 'std._debug @PACKAGE_VERSION@'
 description = [[
 # Debug Settings Library for Lua
 
-This is a light-weight debug state management library for Lua 5.1
+This is a light-weight debug hints management library for Lua 5.1
 (including LuaJIT), 5.2 and 5.3 written in pure Lua.
 
 ## LICENSE

@@ -1,5 +1,5 @@
-Debug Settings Library
-======================
+Debug Hints Library
+===================
 
 Copyright (C) 2002-2017 [std._debug authors][authors]
 
@@ -9,8 +9,8 @@ Copyright (C) 2002-2017 [std._debug authors][authors]
 [![Stories in Ready](https://badge.waffle.io/lua-stdlib/_debug.png?label=ready&title=Ready)](https://waffle.io/lua-stdlib/_debug)
 
 
-This is a debug settings management library for Lua 5.1 (including LuaJIT),
-5.2 and 5.3. The libraries are copyright by their authors 2002-2017 (see the
+This is a debug hints management library for Lua 5.1 (including LuaJIT),
+5.2 and 5.3. The library is copyright by its authors 2002-2017 (see the
 [AUTHORS][] file for details), and released under the [MIT license][mit]
 (the same license as Lua itself). There is no warranty.
 

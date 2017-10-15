@@ -1,8 +1,8 @@
-# Normalized Lua API for Lua 5.1, 5.2 & 5.3
+# Debug Hints Library for Lua 5.1, 5.2 & 5.3
 # Copyright (C) 2014-2017 Gary V. Vaughan
 
 before:
-  this_module = 'std.normalize.version'
+  this_module = 'std._debug.version'
 
   M = require(this_module)
 
@@ -16,6 +16,6 @@ specify std.version:
 
 - describe version:
   - it describes this module:
-      expect(M).to_match '^Normalized Lua Functions'
+      expect(M).to_match '^Debug hints library '
   - it ends with the release number:
       expect(M).to_match.any_of {' git$', ' %d[%.%d]*$'}

@@ -1,5 +1,5 @@
 --[[
- Normalized Lua API for Lua 5.1, 5.2 & 5.3
+ Debug Hints Library for Lua 5.1, 5.2 & 5.3
  Copyright (C) 2014-2017 Gary V. Vaughan
 ]]
 local typecheck

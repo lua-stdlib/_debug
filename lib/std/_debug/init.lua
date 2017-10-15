@@ -1,10 +1,10 @@
 --[[
- Debug Settings Library for Lua 5.1, 5.2 & 5.3
+ Debug Hints Library for Lua 5.1, 5.2 & 5.3
  Copyright (C) 2011-2017 Gary V. Vaughan
  Copyright (C) 2002-2014 Reuben Thomas <rrt@sc3d.org>
 ]]
 --[[--
- Manage debug state, and associated substate hints.
+ Manage debug mode, and associated substate hints.
 
  Set or change all the debug substate hints by calling the returned
  module functable with no argument to reset to defaults; with `true`
@@ -45,9 +45,9 @@ local metatable = {
    --- Metamethods
    -- @section metamethods
 
-   --- Change the overall debug state.
+   --- Change the all builtin debug hints.
    -- @function __call
-   -- @bool[opt] enable or disable all debugging substates
+   -- @bool[opt] enable or disable all debugging substate hints
    -- @treturn Substates substates
    -- @usage
    --   -- Enable all debugging substates
