@@ -24,6 +24,7 @@ $(luadir)/version.lua: .FORCE
 	if cmp -s '$@' '$@T'; then						\
 	    rm -f '$@T';							\
 	else									\
+	    echo 'echo return "Debug hints library / $(VERSION)" > $@';		\
 	    mv '$@T' '$@';							\
 	fi
 
