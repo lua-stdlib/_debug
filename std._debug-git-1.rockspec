@@ -12,16 +12,26 @@ description = {
    license = 'MIT/X11',
 }
 
-source = {
-   url = 'git://github.com/lua-stdlib/_debug.git',
-   --url = 'http://github.com/lua-stdlib/_debug/archive/v' .. _MODREV .. '.zip',
-   --dir = '_debug-' .. _MODREV,
-}
+source = (function(gitp)
+   if gitp then
+      return {
+         url = 'git://github.com/lua-stdlib/_debug.git',
+      }
+   else
+      return {
+         url = 'http://github.com/lua-stdlib/_debug/archive/v' .. _MODREV .. '.zip',
+         dir = '_debug-' .. _MODREV,
+      }
+   end
+end)(_MODREV == 'git')
 
 dependencies = {
    'lua >= 5.1, < 5.4',
-   'ldoc',
 }
+
+if _MODREV == 'git' then
+   dependencies[#dependencies + 1] = 'ldoc'
+end
 
 build = {
    type = 'builtin',
