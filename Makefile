@@ -1,3 +1,6 @@
+# Debug Hints Library for Lua 5.1, 5.2 & 5.3
+# Copyright (C) 2002-2018 std._debug authors
+
 LDOC	= ldoc
 LUA	= lua
 MKDIR	= mkdir -p
