@@ -1,4 +1,4 @@
-# Debug Hints Library for Lua 5.1, 5.2 & 5.3
+# Debug Hints Library for Lua 5.1, 5.2, 5.3 & 5.4
 # Copyright (C) 2002-2018 std._debug authors
 
 LDOC	= ldoc
@@ -16,7 +16,7 @@ SOURCES =				\
 	$(NOTHING_ELSE)
 
 
-all: doc $(luadir)/version.lua
+all: $(luadir)/version.lua
 
 
 $(luadir)/version.lua: .FORCE
