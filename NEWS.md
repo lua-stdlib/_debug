@@ -1,8 +1,5 @@
 # Stdlib NEWS - User visible changes
 
-## Noteworthy changes in release ?.? (????-??-??) [?]
-
-
 ## Noteworthy changes in release 1.0.1 (2018-09-22) [stable]
 
 ### New Features

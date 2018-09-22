@@ -2,7 +2,5 @@
 .DS_Store
 /*.src.rock
 /build-aux/config.ld
-/doc
-/lib/std/_debug/version.lua
 /luacov.*.out
 /stdlib-*.tar.gz
