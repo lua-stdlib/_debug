@@ -1,6 +1,6 @@
 --[[
- Debug Hints Library for Lua 5.1, 5.2 & 5.3
- Copyright (C) 2002-2018 std._debug authors
+ Debug Hints Library for Lua 5.1, 5.2, 5.3 & 5.4
+ Copyright (C) 2002-2019 std._debug authors
 ]]
 
 title = 'std._debug @PACKAGE_VERSION@ Reference'
@@ -9,7 +9,7 @@ description = [[
 # Debug Settings Library for Lua
 
 This is a light-weight debug hints management library for Lua 5.1
-(including LuaJIT), 5.2 and 5.3 written in pure Lua.
+(including LuaJIT), 5.2, 5.3 and 5.4 written in pure Lua.
 
 ## LICENSE
 

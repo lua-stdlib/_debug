@@ -1,6 +1,6 @@
 --[[
- Debug Hints Library for Lua 5.1, 5.2 & 5.3
- Copyright (C) 2002-2018 std._debug authors
+ Debug Hints Library for Lua 5.1, 5.2, 5.3 & 5.4
+ Copyright (C) 2002-2019 std._debug authors
 ]]
 --[[--
  Manage debug mode, and associated substate hints.
