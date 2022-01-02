@@ -1,7 +1,7 @@
 Debug Hints Library
 ===================
 
-Copyright (C) 2002-2020 [std._debug authors][authors]
+Copyright (C) 2002-2022 [std._debug authors][authors]
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://mit-license.org)
 [![travis-ci status](https://secure.travis-ci.org/lua-stdlib/_debug.png?branch=master)](http://travis-ci.org/lua-stdlib/_debug/builds)
