@@ -1,0 +1,31 @@
+# Debug Hints Library for Lua 5.1, 5.2, 5.3 & 5.4
+# Copyright (C) 2014-2022 std.prototype authors
+
+before:
+  this_module = 'std._debug'
+
+  M = require(this_module)
+  M.version = nil               -- previous specs may have autoloaded it
+
+
+specify std._debug:
+- context when required:
+  - it does not touch the global table:
+      expect(show_apis {added_to='_G', by=this_module}).
+         to_equal {}
+
+- context when lazy loading:
+  - it has no submodules on initial load:
+      for _, v in pairs(M) do
+         expect(type(v)).not_to_be 'table'
+      end
+
+
+- describe version:
+  - before:
+      x = M.version
+
+  - it returns a string:
+      expect(type(M.version)).to_be 'string'
+  - it contains package description:
+      expect(M.version).to_match '^Debug hints library '

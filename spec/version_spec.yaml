@@ -6,7 +6,7 @@ before:
 
   M = require(this_module)
 
-specify std.version:
+specify std._debug.version:
 - context when required:
   - it returns a string:
       expect(type(M)).to_be 'string'
