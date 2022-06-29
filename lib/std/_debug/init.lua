@@ -51,7 +51,7 @@ local metatable = {
    -- @usage
    --   -- Enable all debugging substates
    --   local _debug = require 'std._debug'(true)
-   __call = function(_, x)
+   __call = function(self, x)
       if x == true then
          _DEBUG = 'safe'
       elseif x == false then
@@ -73,7 +73,7 @@ local metatable = {
    --    `name`, otherwise `nil` if nothing was found
    -- @usage
    --   local version = require 'std._debug'.version
-   __index = function(self, name)
+   __index = function(_, name)
       local v = spec[name]
       if type(v) == 'table' then
          return v[_DEBUG]
