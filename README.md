@@ -1,7 +1,7 @@
 Debug Hints Library
 ===================
 
-Copyright (C) 2002-2022 [std._debug authors][authors]
+Copyright (C) 2002-2023 [std._debug authors][authors]
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://mit-license.org)
 [![workflow status](https://github.com/lua-stdlib/_debug/actions/workflows/spec.yml/badge.svg?branch=master)](https://github.com/lua-stdlib/_debug/actions)

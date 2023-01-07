@@ -1,6 +1,6 @@
 --[[
  Debug Hints Library for Lua 5.1, 5.2, 5.3 & 5.4
- Copyright (C) 2014-2022 std._debug authors
+ Copyright (C) 2014-2023 std._debug authors
 ]]
 local typecheck
 have_typecheck, typecheck = pcall(require, 'typecheck')

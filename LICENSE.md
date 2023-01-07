@@ -1,4 +1,4 @@
-Copyright (C) 2002-2022 `std._debug` authors
+Copyright (C) 2002-2023 `std._debug` authors
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
