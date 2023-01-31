@@ -36,11 +36,6 @@ local function getmetamethod(x, n)
 end
 
 
-function callable(x)
-   return type(x) == 'function' or getmetamethod(x, '__call')
-end
-
-
 function copy(t)
    local r = {}
    for k, v in next, t do r[k] = v end
