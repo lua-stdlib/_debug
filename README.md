@@ -1,7 +1,7 @@
 Debug Hints Library
 ===================
 
-Copyright (C) 2002-2023 [std._debug authors][authors]
+Copyright (C) 2002-2026 [std._debug authors][authors]
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://mit-license.org)
 [![workflow status](https://github.com/lua-stdlib/_debug/actions/workflows/spec.yml/badge.svg?branch=master)](https://github.com/lua-stdlib/_debug/actions)
@@ -9,9 +9,9 @@ Copyright (C) 2002-2023 [std._debug authors][authors]
 
 
 This is a debug hints management library for Lua 5.1 (including LuaJIT),
-5.2, 5.3 and 5.4. The library is copyright by its authors (see the [AUTHORS][]
-file for details), and released under the [MIT license][mit] (the same
-license as Lua itself). There is no warranty.
+5.2, 5.3, 5.4 and 5.5. The library is copyright by its authors (see the
+[AUTHORS][] file for details), and released under the [MIT license][mit]
+(the same license as Lua itself). There is no warranty.
 
 `std._debug` has no run-time prerequisites beyond a standard Lua system.
 

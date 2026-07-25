@@ -1,5 +1,5 @@
-# Debug Hints Library for Lua 5.1, 5.2, 5.3 & 5.4
-# Copyright (C) 2002-2023 std._debug authors
+# Debug Hints Library for Lua 5.1, 5.2, 5.3, 5.4 & 5.5
+# Copyright (C) 2002-2026 std._debug authors
 
 LDOC	= ldoc
 LUA	= lua
