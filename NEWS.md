@@ -2,6 +2,13 @@
 
 ## Noteworthy changes in release ?.? (????-??-??) [?]
 
+
+## Noteworthy changes in release 1.1.0 (2026-07-25) [stable]
+
+### New Features
+
+  - Initial support for Lua 5.5.
+
 ### Bug fixes
 
   - Correct self arguments in metamethod declarations.
