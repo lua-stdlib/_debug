@@ -18,9 +18,11 @@ modules  = {
 -- `luke release version=X.Y` adds the release to NEWS.md, writes the
 -- release rockspec, points the README badges at the release branch,
 -- commits the LDocs, and publishes them to gh-pages.
+-- It first checks that the rockspec's dependencies are installed.
 release  = {
    news         = 'NEWS.md',
    rockspec     = 'std._debug-dev-1.rockspec',
+   check_dependencies = true,
    add          = {'doc/'},
    replacements = {
       {['README.md'] = {
