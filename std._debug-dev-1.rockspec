@@ -1,4 +1,4 @@
-local _MODREV, _SPECREV = 'git', '-1'
+local _MODREV, _SPECREV = 'dev', '-1'
 
 package = 'std._debug'
 version = _MODREV .. _SPECREV
@@ -8,12 +8,12 @@ description = {
    detailed = [[
       Manage an overall debug state, and associated hint substates.
    ]],
-   homepage = 'http://lua-stdlib.github.io/_debug',
+   homepage = 'https://lua-stdlib.github.io/_debug',
    license = 'MIT/X11',
 }
 
 source = {
-   url = 'http://github.com/lua-stdlib/_debug/archive/v' .. _MODREV .. '.zip',
+   url = 'https://github.com/lua-stdlib/_debug/archive/v' .. _MODREV .. '.zip',
    dir = '_debug-' .. _MODREV,
 }
 
@@ -31,10 +31,10 @@ build = {
    copy_directories = {'doc'},
 }
 
-if _MODREV == 'git' then
+if _MODREV == 'dev' then
    build.copy_directories = nil
 
    source = {
-      url = 'git://github.com/lua-stdlib/_debug.git',
+      url = 'git+https://github.com/lua-stdlib/_debug.git',
    }
 end
