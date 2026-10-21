@@ -5,4 +5,4 @@
 /doc
 /lib/std/_debug/version.lua
 /luacov.*.out
-/stdlib-*.tar.gz
+/_debug-*.tar.gz

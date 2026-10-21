@@ -2,6 +2,15 @@
 
 ## Noteworthy changes in release ?.? (????-??-??) [?]
 
+### New features
+
+  - std._debug builds with luke instead of make.  To install current
+    git master, use the `std._debug-dev-1.rockspec`:
+
+    ```bash
+    luarocks install https://raw.githubusercontent.com/lua-stdlib/_debug/master/std._debug-dev-1.rockspec
+    ```
+
 
 ## Noteworthy changes in release 1.1.0 (2026-07-25) [stable]
 

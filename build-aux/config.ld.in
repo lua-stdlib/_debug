@@ -3,8 +3,8 @@
  Copyright (C) 2002-2026 std._debug authors
 ]]
 
-title = 'std._debug @PACKAGE_VERSION@ Reference'
-project = 'std._debug @PACKAGE_VERSION@'
+title = 'std._debug @version@ Reference'
+project = 'std._debug @version@'
 description = [[
 # Debug Settings Library for Lua
 
