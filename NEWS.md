@@ -2,6 +2,9 @@
 
 ## Noteworthy changes in release ?.? (????-??-??) [?]
 
+
+## Noteworthy changes in release 1.2 (2026-10-21) [stable]
+
 ### New features
 
   - std._debug builds with luke instead of make.  To install current
