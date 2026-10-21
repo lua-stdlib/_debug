@@ -1,4 +1,4 @@
-local _MODREV, _SPECREV = 'dev', '-1'
+local _MODREV, _SPECREV = '1.2', '-1'
 
 package = 'std._debug'
 version = _MODREV .. _SPECREV

@@ -4,8 +4,8 @@ Debug Hints Library
 Copyright (C) 2002-2026 [std._debug authors][authors]
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://mit-license.org)
-[![workflow status](https://github.com/lua-stdlib/_debug/actions/workflows/spec.yml/badge.svg?branch=master)](https://github.com/lua-stdlib/_debug/actions)
-[![codecov.io](https://codecov.io/gh/lua-stdlib/_debug/graph/badge.svg?branch=master)](https://codecov.io/gh/lua-stdlib/_debug?branch=master)
+[![workflow status](https://github.com/lua-stdlib/_debug/actions/workflows/spec.yml/badge.svg?branch=release-v1.2)](https://github.com/lua-stdlib/_debug/actions)
+[![codecov.io](https://codecov.io/gh/lua-stdlib/_debug/graph/badge.svg?branch=release-v1.2)](https://codecov.io/gh/lua-stdlib/_debug?branch=release-v1.2)
 
 
 This is a debug hints management library for Lua 5.1 (including LuaJIT),
