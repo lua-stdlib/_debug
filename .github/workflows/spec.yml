@@ -21,9 +21,9 @@ jobs:
       contents: read
       id-token: write
 
-    # Specl's own dependencies include typecheck and stdlib 41, so
-    # std._debug's dependencies go into a tree of their own, the only
-    # one the examples search.
+    # Specl's own dependencies include typecheck and a released
+    # std._debug, so std._debug's dependencies go into a tree of their
+    # own, the only one the examples search.
     env:
       DEPS: ${{ github.workspace }}/deps
 
