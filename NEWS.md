@@ -2,7 +2,7 @@
 
 ## Noteworthy changes in release ?.? (????-??-??) [?]
 
-### Incompatible changes
+### New features
 
   - std._debug is built from the `build` table of its rockspec, by the
     `luarocks-build-luke` LuaRocks build backend, which LuaRocks
