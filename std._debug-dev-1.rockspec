@@ -25,7 +25,7 @@ dependencies = {
 
 
 build_dependencies = {
-   'luarocks-build-luke >= 0.2',
+   'luarocks-build-luke >= 0.3.1',
 }
 
 build = {
