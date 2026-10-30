@@ -40,6 +40,10 @@ jobs:
           luarocks install --server=https://luarocks.org/manifests/gvvaughan ldoc
           printf gvvaughan > "$(luarocks show --rock-dir ldoc)/rock_namespace"
           luarocks make --only-deps
+          # std._debug is what is under test, so it is always installed, with
+          # std.strict, which reads its hints, in every cell, and typecheck,
+          # which reads them too, in half of them.
+          luarocks install std.strict
           test -n "${{ matrix.typecheck }}" && luarocks install typecheck || true
 
       - name: build
@@ -58,10 +62,14 @@ jobs:
           # Fail if a dependency installed a module this matrix cell omits.
           eval "$(luarocks path)"
           lua -e "
-            local want = '${{ matrix.typecheck }}' ~= ''
-            local have = pcall(require, 'typecheck')
-            print('typecheck', have and 'installed' or 'not installed')
-            assert(have == want, 'typecheck installation does not match matrix')
+            for name, want in pairs {
+               ['std.strict.init'] = true,
+               ['typecheck'] = '${{ matrix.typecheck }}' ~= '',
+            } do
+               local have = pcall(require, name)
+               print(name, have and 'installed' or 'not installed')
+               assert(have == want, name .. ' installation does not match matrix')
+            end
           "
 
       - name: test

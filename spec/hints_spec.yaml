@@ -1,0 +1,95 @@
+# Debug Hints Library for Lua 5.1, 5.2, 5.3, 5.4 & 5.5
+# Copyright (C) 2014-2026 std._debug authors
+
+# What the libraries that read the hints of std._debug do with them.  The
+# libraries are installed by the CI matrix, typecheck in only some of its
+# cells, so each example that needs one says so.
+
+specify std._debug hints:
+- describe the hints:
+  - it has the defaults: |
+      expect(luaproc [[
+         local _debug = require 'std._debug'
+         io.write(tostring(_debug.argcheck), ' ', tostring(_debug.strict), ' ', tostring(_debug.level))
+      ]]).to_output 'true true 1'
+  - it has them all on when it is called with true: |
+      expect(luaproc [[
+         local _debug = require 'std._debug'(true)
+         io.write(tostring(_debug.argcheck), ' ', tostring(_debug.strict), ' ', tostring(_debug.level))
+      ]]).to_output 'true true 1'
+  - it has them all off when it is called with false: |
+      expect(luaproc [[
+         local _debug = require 'std._debug'(false)
+         io.write(tostring(_debug.argcheck), ' ', tostring(_debug.strict), ' ', tostring(_debug.level))
+      ]]).to_output 'false false inf'
+  - it has the defaults again when it is called with nil, after false: |
+      expect(luaproc [[
+         local _debug = require 'std._debug'(false)(nil)
+         io.write(tostring(_debug.argcheck), ' ', tostring(_debug.strict), ' ', tostring(_debug.level))
+      ]]).to_output 'true true 1'
+  - it has a hint that is set by assigning to it: |
+      expect(luaproc [[
+         local _debug = require 'std._debug'
+         _debug.argcheck = false
+         io.write(tostring(_debug.argcheck), ' ', tostring(_debug.strict))
+      ]]).to_output 'false true'
+
+- describe argument checking by typecheck:
+  - before: |
+      -- Whether a call with an argument of the wrong type is an error.
+      check = [[
+         local f = require 'typecheck'.argscheck('f(int)', function(x) return x end)
+         io.write(tostring((pcall(f, 'not an int'))))
+      ]]
+  - it checks arguments by default: |
+      if have_typecheck then
+         expect(luaproc(check)).to_output 'false'
+      end
+  - it checks arguments when it is called with true: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'(true)\n" .. check)).to_output 'false'
+      end
+  - it does not check arguments when argcheck is false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'.argcheck = false\n" .. check)).to_output 'true'
+      end
+  - it does not check arguments when it is called with false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'(false)\n" .. check)).to_output 'true'
+      end
+  - it checks arguments again when it is called with nil, after false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'(false)(nil)\n" .. check)).to_output 'false'
+      end
+
+- describe strict variable declarations by typecheck:
+  - before: |
+      -- Whether typecheck applied std.strict to itself, which it does only
+      -- if std.strict is installed, and the strict hint is not false.
+      check = [[
+         require 'typecheck'
+         io.write(tostring(package.loaded['std.strict.init'] ~= nil))
+      ]]
+  - it applies them by default, when std.strict is installed: |
+      if have_typecheck then
+         expect(luaproc(check)).to_output(tostring(have_strict))
+      end
+  - it does not apply them when strict is false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'.strict = false\n" .. check)).to_output 'false'
+      end
+  - it does not apply them when it is called with false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'(false)\n" .. check)).to_output 'false'
+      end
+  - it applies them again when it is called with nil, after false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'(false)(nil)\n" .. check)).to_output(tostring(have_strict))
+      end
+  - it leaves argument checking on when only strict is false: |
+      if have_typecheck then
+         expect(luaproc("require 'std._debug'.strict = false\n" .. [[
+            local f = require 'typecheck'.argscheck('f(int)', function(x) return x end)
+            io.write(tostring((pcall(f, 'not an int'))))
+         ]])).to_output 'false'
+      end
